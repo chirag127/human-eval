@@ -1,4 +1,3 @@
-from apikey import key
 
 
 def generate(prompt):
