@@ -8,6 +8,7 @@ openai.api_key = openai_key
 def generate(p):
 
     try:
+        sleep(3)
 
         response = openai.Completion.create(
     model="code-cushman-001",
