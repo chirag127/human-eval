@@ -19,12 +19,13 @@ def generate(p):
     presence_penalty=0,
     stop=["\nclass", "\ndef"]
     )
-        sleep(5)
+        sleep(20)
         code = response.choices[0].text
         print("".join([p, code]))
         return code
 
-    except:
+    except Exception as error:
+        print(error)
         print("Error")
         return ""
 
