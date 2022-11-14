@@ -30,7 +30,7 @@ from human_eval.data import write_jsonl, read_problems
 
 problems = read_problems()
 
-num_samples_per_task = 200
+num_samples_per_task = 1
 samples = [
     dict(
         task_id=task_id, completion=generate(problems[task_id]["prompt"])
