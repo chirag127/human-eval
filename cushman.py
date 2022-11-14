@@ -28,7 +28,7 @@ problems = read_problems()
 num_samples_per_task = 1
 samples = [
     dict(
-        task_id=task_id, completion=g(problems[task_id]["prompt"])
+        task_id=task_id, completion=generate(problems[task_id]["prompt"])
     )
     for task_id in problems
     for _ in range(num_samples_per_task)
