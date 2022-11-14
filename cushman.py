@@ -1,5 +1,6 @@
 import os
 import openai
+from time import sleep
 from apikey import openai_key
 
 openai.api_key = openai_key
