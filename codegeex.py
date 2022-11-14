@@ -1,4 +1,4 @@
-
+import requests
 
 def generate(prompt):
     try:

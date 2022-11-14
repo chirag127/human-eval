@@ -5,3 +5,4 @@ black
 autopep8
 cohere
 openai
+requests
