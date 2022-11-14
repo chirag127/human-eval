@@ -25,7 +25,7 @@ def generate(p):
         return code
 
     except:
-        print("Error")]
+        print("Error")
         return ""
 
 
