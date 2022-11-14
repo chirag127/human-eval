@@ -7,19 +7,24 @@ openai.api_key = openai_key
 
 def generate(p):
 
-    response = openai.Completion.create(
-  model="code-cushman-001",
-  prompt=p,
-  temperature=0.2,
-  max_tokens=256,
-  top_p=1,
-  frequency_penalty=0,
-  presence_penalty=0,
-  stop=["\nclass", "\ndef"]
-)
-    sleep(3)
-    code = response.choices[0].text
-    return code
+    try:
+
+        response = openai.Completion.create(
+    model="code-cushman-001",
+    prompt=p,
+    temperature=0.2,
+    max_tokens=256,
+    top_p=1,
+    frequency_penalty=0,
+    presence_penalty=0,
+    stop=["\nclass", "\ndef"]
+    )
+        sleep(3)
+        code = response.choices[0].text
+        return code 
+    except Exception as e:
+        print(e)
+        return "Error"
 
 
 
