@@ -16,6 +16,7 @@ def generate(p):
   presence_penalty=0,
   stop=["\nclass", "\ndef"]
 )
+    sleep(3)
     code = response.choices[0].text
     return code
 
