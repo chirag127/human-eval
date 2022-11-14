@@ -7,7 +7,7 @@ def generate_one_completion(prompt):
     try:
         co = cohere.Client(key)
         response = co.generate(
-        model="xlarge-20221108",
+        model="medium",
         prompt=prompt,
         max_tokens=100,
         temperature=0,
