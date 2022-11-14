@@ -4,8 +4,9 @@ import cohere
 
 
 def generate_one_completion(prompt):
-    co = cohere.Client(key)
-    response = co.generate(
+    try:
+        co = cohere.Client(key)
+        response = co.generate(
         model="xlarge-20221108",
         prompt=prompt,
         max_tokens=100,
@@ -17,8 +18,10 @@ def generate_one_completion(prompt):
         stop_sequences=[],
         return_likelihoods="NONE",
     )
-    return response.generations[0].text
-
+        return response.generations[0].text
+    except Exception as e:
+        print(e)
+        return "None"
 
 from human_eval.data import write_jsonl, read_problems
 
