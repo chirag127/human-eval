@@ -4,3 +4,4 @@ numpy
 black 
 autopep8
 cohere
+openai
