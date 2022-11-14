@@ -21,10 +21,12 @@ def generate(p):
     )
         sleep(3)
         code = response.choices[0].text
-        return code 
-    except Exception as e:
-        print(e)
-        return "Error"
+        print("".join([p, code]))
+        return code
+
+    except:
+        print("Error")]
+        return ""
 
 
 
