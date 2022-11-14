@@ -1,4 +1,4 @@
-from apikey import key
+from apikey import cohere_key
 
 import cohere
 
