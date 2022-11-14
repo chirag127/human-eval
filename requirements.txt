@@ -1,3 +1,6 @@
 tqdm
 fire
 numpy
+black 
+autopep8
+cohere
