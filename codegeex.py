@@ -38,4 +38,4 @@ samples = [
     for task_id in problems
     for _ in range(num_samples_per_task)
 ]
-write_jsonl("samples.jsonl", samples)
+write_jsonl("cg.jsonl", samples)
