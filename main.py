@@ -5,7 +5,7 @@ import cohere
 
 def generate_one_completion(prompt):
     try:
-        co = cohere.Client(key)
+        co = cohere.Client(cohere_key)
         response = co.generate(
         model="medium",
         prompt=prompt,
