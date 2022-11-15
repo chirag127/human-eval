@@ -1,4 +1,4 @@
-# HumanEval: Hand-Written Evaluation Set 
+# HumanEval: Hand-Written Evaluation Set
 
 This is an evaluation harness for the HumanEval problem solving dataset
 described in the paper "[Evaluating Large Language Models Trained on
@@ -55,7 +55,7 @@ write_jsonl("samples.jsonl", samples)
 
 To evaluate the samples, run
 ```
-$ evaluate_functional_correctness samples.jsonl
+$ evaluate_functional_correctness yurt-0_5831893773454943.jsonl
 Reading samples...
 32800it [00:01, 23787.50it/s]
 Running test suites...

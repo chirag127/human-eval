@@ -37,7 +37,7 @@ def generate_one_completion(prompt):
     print(code)
     return code
 
-NUM_SAMPLES_PER_TASK = 1
+NUM_SAMPLES_PER_TASK = 101
 
 
 def main() -> None:
