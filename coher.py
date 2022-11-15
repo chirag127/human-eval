@@ -25,7 +25,7 @@ def generate_one_completion(prompt):
     try:
         cohere_client = cohere.Client(COHERE_KEY)
         response = cohere_client.generate(
-            model="medium",
+            model="large",
             prompt=prompt,
             max_tokens=100,
             temperature=0,
