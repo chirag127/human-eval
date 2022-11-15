@@ -1,11 +1,12 @@
 """
-This module contains the functions for generating code completions in cohere
+This module contains the code for the code generation model codex.
 """
 
-import cohere
 
+import cohere
 from apikey import COHERE_KEY
-from human_eval.data import read_problems, write_jsonl
+from f import get_samples
+from human_eval.data import write_jsonl
 
 
 def generate_one_completion(prompt):
@@ -41,14 +42,20 @@ def generate_one_completion(prompt):
         return "None"
 
 
-problems = read_problems()
-
 NUM_SAMPLES_PER_TASK = 1
-samples = [
-    dict(
-        task_id=task_id, completion=generate_one_completion(problems[task_id]["prompt"])
+
+
+def main() -> None:
+    """
+    This function is the main function for the code generation model codegeex.
+    """
+    samples = get_samples(
+        num_samples_per_task=NUM_SAMPLES_PER_TASK,
+        _get_code_from_api=generate_one_completion,
     )
-    for task_id in problems
-    for _ in range(NUM_SAMPLES_PER_TASK)
-]
-write_jsonl("samples.jsonl", samples)
+    print(samples)
+    write_jsonl(f"cohere-{NUM_SAMPLES_PER_TASK}.jsonl", samples)
+
+
+if __name__ == "__main__":
+    main()

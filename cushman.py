@@ -1,15 +1,16 @@
 """
-This module contains the code for the code generation model codex
+This module contains the code for the code generation model codex.
 """
 
 from time import sleep
 
 import openai
-
 from apikey import OPENAI_KEY
-from human_eval.data import read_problems, write_jsonl
+from f import get_samples
+from human_eval.data import write_jsonl
 
 openai.api_key = OPENAI_KEY
+NUM_SAMPLES_PER_TASK = 1
 
 
 def generate(prompt):
@@ -44,12 +45,16 @@ def generate(prompt):
         return ""
 
 
-problems = read_problems()
+def main() -> None:
+    """
+    This function is the main function for the code generation model codegeex.
+    """
+    samples = get_samples(
+        num_samples_per_task=NUM_SAMPLES_PER_TASK, _get_code_from_api=generate
+    )
+    print(samples)
+    write_jsonl("cg-sample.jsonl", samples)
 
-NUM_SAMPLES_PER_TASK = 1
-samples = [
-    dict(task_id=task_id, completion=generate(problems[task_id]["prompt"]))
-    for task_id in problems
-    for _ in range(NUM_SAMPLES_PER_TASK)
-]
-write_jsonl("cd.jsonl", samples)
+
+if __name__ == "__main__":
+    main()
