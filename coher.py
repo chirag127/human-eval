@@ -6,8 +6,8 @@ import random
 
 import cohere
 from apikey import COHERE_KEY
-from f import get_samples
-from human_eval.data import write_jsonl
+
+from f import get_samples,write_jsonl_in_folder
 
 
 def generate_one_completion(prompt):
@@ -55,7 +55,7 @@ def main() -> None:
         _get_code_from_api=generate_one_completion,
     )
     print(samples)
-    write_jsonl(f"cohere-"+(str(random.random())).replace(".", "_")+ ".jsonl", samples)
+    write_jsonl_in_folder("cohere", samples)
 
 
 if __name__ == "__main__":

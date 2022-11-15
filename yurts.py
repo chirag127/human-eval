@@ -3,9 +3,7 @@ This module contains the code for the code generation model codex.
 """
 
 import requests
-from f import get_samples
-from human_eval.data import write_jsonl
-import random
+from f import get_samples,write_jsonl_in_folder
 
 def generate_one_completion(prompt):
 
@@ -51,7 +49,7 @@ def main() -> None:
         _get_code_from_api=generate_one_completion,
     )
     print(samples)
-    write_jsonl(f"yurt-"+(str(random.random())).replace(".", "_")+ ".jsonl", samples)
+    write_jsonl_in_folder("yurt", samples)
 
 
 if __name__ == "__main__":

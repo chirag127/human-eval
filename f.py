@@ -39,12 +39,15 @@ def generate(prompt: str, _get_code_from_api) -> str:
         print(error)
         return ""
 
-def write_jsonl_f(samples, file_name):
+def write_jsonl_in_folder(folder_name,samples):
     """
     This function writes the samples to a jsonl file.
     :param samples: The samples to write to a file
     :param file_name: The name of the file to write to
     """
-    file_name  = f"{file_name}"+(str(random.random())).replace(".", "_")+ ".jsonl"
+    file_name  = (str(random.random())).replace(".", "_")+ ".jsonl"
 
-    write_jsonl( file_name,samples)
+    full_file_name = folder_name + "/" + file_name
+
+
+    write_jsonl( full_file_name,samples)

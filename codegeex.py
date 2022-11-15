@@ -1,10 +1,9 @@
 """
 This module contains the code for the code generation model codegeex.
 """
-import random
-
 import requests
-from f import get_samples
+from f import get_samples,write_jsonl_in_folder
+
 
 
 NUM_SAMPLES_PER_TASK = 102
@@ -52,7 +51,7 @@ def main() -> None:
         num_samples_per_task=NUM_SAMPLES_PER_TASK, _get_code_from_api=codegeex_api
     )
     print(samples)
-    write_jsonl("cg"+(str(random.random())).replace(".", "_")+ ".jsonl", samples)
+    write_jsonl_in_folder("cg", samples)
 
 
 if __name__ == "__main__":
