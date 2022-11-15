@@ -55,7 +55,7 @@ def main() -> None:
         _get_code_from_api=generate_one_completion,
     )
     print(samples)
-    write_jsonl(f"cohere-"+random.random()+ ".jsonl", samples)
+    write_jsonl(f"cohere-"+(str(random.random())).replace(".", "_")+ ".jsonl", samples)
 
 
 if __name__ == "__main__":

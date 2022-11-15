@@ -54,7 +54,7 @@ def main() -> None:
         num_samples_per_task=NUM_SAMPLES_PER_TASK, _get_code_from_api=generate
     )
     print(samples)
-    write_jsonl("cg"+random.random()+ ".jsonl", samples)
+    write_jsonl("cg"+(str(random.random())).replace(".", "_")+ ".jsonl", samples)
 
 
 if __name__ == "__main__":

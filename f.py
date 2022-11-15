@@ -1,4 +1,6 @@
 from human_eval.data import read_problems
+from human_eval.data import write_jsonl
+import random
 
 
 def get_samples(num_samples_per_task, _get_code_from_api) -> list:
@@ -36,3 +38,13 @@ def generate(prompt: str, _get_code_from_api) -> str:
     except Exception as error:  # pylint: disable=broad-except
         print(error)
         return ""
+
+def write_jsonl_f(samples, file_name):
+    """
+    This function writes the samples to a jsonl file.
+    :param samples: The samples to write to a file
+    :param file_name: The name of the file to write to
+    """
+    file_name  = f"{file_name}"+(str(random.random())).replace(".", "_")+ ".jsonl"
+
+    write_jsonl( file_name,samples)

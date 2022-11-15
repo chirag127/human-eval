@@ -6,7 +6,6 @@ import random
 import requests
 from f import get_samples
 
-from human_eval.data import write_jsonl
 
 NUM_SAMPLES_PER_TASK = 102
 
@@ -53,7 +52,7 @@ def main() -> None:
         num_samples_per_task=NUM_SAMPLES_PER_TASK, _get_code_from_api=codegeex_api
     )
     print(samples)
-    write_jsonl("cg"+random.random()+ ".jsonl", samples)
+    write_jsonl("cg"+(str(random.random())).replace(".", "_")+ ".jsonl", samples)
 
 
 if __name__ == "__main__":
