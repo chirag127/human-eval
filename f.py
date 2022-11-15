@@ -1,3 +1,4 @@
+import os
 from human_eval.data import read_problems
 from human_eval.data import write_jsonl
 import random
@@ -46,6 +47,10 @@ def write_jsonl_in_folder(folder_name,samples):
     :param file_name: The name of the file to write to
     """
     file_name  = (str(random.random())).replace(".", "_")+ ".jsonl"
+
+    # check if folder exists
+    if not os.path.exists(folder_name):
+        os.makedirs(folder_name)
 
     full_file_name = folder_name + "/" + file_name
 
