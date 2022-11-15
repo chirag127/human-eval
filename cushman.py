@@ -11,7 +11,8 @@ def generate(p):
         sleep(3)
 
         response = openai.Completion.create(
-    model="code-cushman-001",
+    # model="code-cushman-001",
+    model="code-davinci-002",
     prompt=p,
     temperature=0.2,
     max_tokens=256,
@@ -44,6 +45,6 @@ samples = [
     for task_id in problems
     for _ in range(num_samples_per_task)
 ]
-write_jsonl("cush.jsonl", samples)
+write_jsonl("cd.jsonl", samples)
 
 # print(generate("# Write a function that takes a string and returns a string")  )
