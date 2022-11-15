@@ -5,7 +5,7 @@ This module contains the code for the code generation model codex.
 import requests
 from f import get_samples
 from human_eval.data import write_jsonl
-
+import random
 
 def generate_one_completion(prompt):
 

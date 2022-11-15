@@ -1,6 +1,7 @@
 """
 This module contains the code for the code generation model codegeex.
 """
+import random
 
 import requests
 from f import get_samples

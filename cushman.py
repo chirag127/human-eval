@@ -3,6 +3,7 @@ This module contains the code for the code generation model codex.
 """
 
 from time import sleep
+import random
 
 import openai
 from apikey import OPENAI_KEY

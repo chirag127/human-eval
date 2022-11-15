@@ -2,6 +2,7 @@
 This module contains the code for the code generation model codex.
 """
 
+import random
 
 import cohere
 from apikey import COHERE_KEY
