@@ -43,14 +43,12 @@ def generate_one_completion(prompt):
 
 problems = read_problems()
 
-num_samples_per_task = 1
+NUM_SAMPLES_PER_TASK = 1
 samples = [
     dict(
         task_id=task_id, completion=generate_one_completion(problems[task_id]["prompt"])
     )
     for task_id in problems
-    for _ in range(num_samples_per_task)
+    for _ in range(NUM_SAMPLES_PER_TASK)
 ]
 write_jsonl("samples.jsonl", samples)
-
-# print(generate_one_completion("write python code for the hello world"))
