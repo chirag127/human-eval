@@ -51,7 +51,7 @@ def main() -> None:
         _get_code_from_api=generate_one_completion,
     )
     print(samples)
-    write_jsonl(f"cohere-{NUM_SAMPLES_PER_TASK}.jsonl", samples)
+    write_jsonl(f"yurt-"+random.random()+ ".jsonl", samples)
 
 
 if __name__ == "__main__":
