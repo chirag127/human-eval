@@ -73,6 +73,7 @@ def generate_one_completion(prompt):
     data = completions["data"]
     text = data["text"]
     print(text)
+    print("____________________________________________________________________________________")
     return text
 
 
