@@ -2,8 +2,7 @@
 This module contains the code for the code generation model codegeex.
 """
 import requests
-from f import get_samples,write_jsonl_in_folder
-
+from f import get_samples, write_jsonl_in_folder
 
 
 NUM_SAMPLES_PER_TASK = 102

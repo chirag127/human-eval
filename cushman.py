@@ -7,7 +7,7 @@ import random
 
 import openai
 from apikey import OPENAI_KEY
-from f import get_samples,write_jsonl_in_folder
+from f import get_samples, write_jsonl_in_folder
 
 openai.api_key = OPENAI_KEY
 NUM_SAMPLES_PER_TASK = 1

@@ -7,7 +7,7 @@ import random
 import cohere
 from apikey import COHERE_KEY
 
-from f import get_samples,write_jsonl_in_folder
+from f import get_samples, write_jsonl_in_folder
 
 
 def generate_one_completion(prompt):

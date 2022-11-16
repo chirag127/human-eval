@@ -4,4 +4,4 @@
 
 tasks:
   - init: pip install -r requirements.txt && cd .. && pip install --upgrade pip
-  - command: pip install -e human-eval && cd human-eval
+  - command: pip install -r requirements.txt && cd .. && pip install --upgrade pip && pip install -e human-eval && cd human-eval
