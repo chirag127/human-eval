@@ -55,7 +55,7 @@ write_jsonl("samples.jsonl", samples)
 
 To evaluate the samples, run
 ```
-$ evaluate_functional_correctness yurt-0_5831893773454943.jsonl
+$ evaluate_functional_correctness yurts/0_4095376773726801.jsonl
 Reading samples...
 32800it [00:01, 23787.50it/s]
 Running test suites...
